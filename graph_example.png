@@ -1,0 +1,21 @@
+      B
+     / \
+    /   \
+   A     D
+    \   /
+     \ /
+      C
+
+
+Distances:
+
+A -> B = 4
+A -> C = 2
+B -> D = 5
+C -> D = 3
+
+
+Shortest path:
+
+A -> C -> D
+Total cost = 5
