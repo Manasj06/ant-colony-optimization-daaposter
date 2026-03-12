@@ -1,0 +1,19 @@
+Algorithm ACO(Graph G, Number_of_Ants m, Iterations I)
+
+1. Initialize pheromone value τ on all edges
+2. Place m ants randomly on graph nodes
+
+3. Repeat for I iterations
+      For each ant k
+            Construct a path by choosing next node
+            based on probability rule
+
+      Evaluate path cost for each ant
+
+      Update pheromone trails:
+            Evaporate pheromone on all edges
+            Add pheromone to edges belonging to best paths
+
+4. Store best path found
+
+5. Return best path
