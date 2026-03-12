@@ -1,0 +1,57 @@
+Function 1: Initialize Pheromones
+
+FUNCTION initialize_pheromone(graph)
+
+FOR each edge (i,j) in graph
+      pheromone[i][j] = initial_value
+END FOR
+
+RETURN pheromone
+END FUNCTION
+
+Function 2: Choose Next Node
+
+FUNCTION choose_next_node(current_node)
+
+FOR each neighbour node j
+      probability[j] =
+      (pheromone[current_node][j]^alpha *
+       heuristic[current_node][j]^beta)
+END FOR
+
+Select node using probability distribution
+
+RETURN selected_node
+END FUNCTION
+
+Function 3: Update Pheromone
+
+FUNCTION update_pheromone(paths)
+
+FOR each edge (i,j)
+      pheromone[i][j] =
+      (1 - rho) * pheromone[i][j]   // evaporation
+END FOR
+
+FOR each ant path
+      FOR each edge in path
+            pheromone[i][j] += Q / path_cost
+      END FOR
+END FOR
+
+RETURN pheromone
+END FUNCTION
+
+Function 4: Evaluate Path Cost
+
+FUNCTION calculate_cost(path)
+
+cost = 0
+
+FOR each edge in path
+      cost += distance(edge)
+END FOR
+
+RETURN cost
+END FUNCTION
+
